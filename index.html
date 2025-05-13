@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guerreros Courier</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="guerreros_courier_logo.ico"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <div class="logo">
+      <img src="guerreros_courier_logo.png" alt="Logo">
+      <h1>Guerreros Courier</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#seguimiento">Seguimiento</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero animate__animated animate__zoomIn">
+    <h2>¡Entregas Rápidas y Seguras!</h2>
+    <p>Tu solución en delivery motorizado confiable y eficiente.</p>
+    <a href="#contacto" class="btn">Solicitar Envío</a>
+  </section>
+
+  <section id="nosotros" class="animate__animated animate__fadeInLeft">
+    <h2>Nosotros</h2>
+    <p>En Guerreros Courier brindamos soluciones logísticas eficientes para negocios y personas que necesitan envíos seguros y veloces.</p>
+  </section>
+
+  <section id="servicios" class="animate__animated animate__fadeInRight">
+    <h2>Servicios</h2>
+    <div class="servicios-container">
+      <div class="servicio"> <h3>Envíos Express</h3> <p>Rápidos y en el mismo día.</p> </div>
+      <div class="servicio"> <h3>Seguimiento en Tiempo Real</h3> <p>Sigue tu pedido desde tu celular.</p> </div>
+      <div class="servicio"> <h3>Seguridad Garantizada</h3> <p>Personal calificado y monitoreo 24/7.</p> </div>
+      <div class="servicio"> <h3>Tarifas Competitivas</h3> <p>Precios accesibles sin sacrificar calidad.</p> </div>
+    </div>
+  </section>
+
+  <section id="seguimiento" class="animate__animated animate__fadeInUp">
+    <h2>Seguimiento de Pedidos</h2>
+    <form onsubmit="buscarPedido(event)">
+      <label for="tracking">Número de pedido:</label>
+      <input type="text" id="tracking" name="tracking" required>
+      <button type="submit">Rastrear</button>
+    </form>
+    <div id="resultado-tracking" class="tracking-result"></div>
+  </section>
+
+  <section id="contacto" class="animate__animated animate__fadeInUp">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo Electrónico" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="info">
+      <p>Dirección: Calle Ficticia 123, Lima</p>
+      <p>Email: contacto@guerreroscourier.com</p>
+      <p>Teléfono: +51 999 999 999</p>
+    </div>
+    <div class="mapa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5388452281463!2d-77.03890418570318!3d-12.088493446327756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8be4d261ddd%3A0x2578751f8b4ff3c6!2sLima%2C%20Peru!5e0!3m2!1ses-419!2s!4v1587068542385!5m2!1ses-419!2s" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer class="animate__animated animate__fadeIn">
+    <p>&copy; 2025 Guerreros Courier. Todos los derechos reservados.</p>
+    <div class="redes">
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script>
+    function buscarPedido(event) {
+    event.preventDefault();
+    const codigo = document.getElementById('tracking').value.trim();
+    const resultado = document.getElementById('resultado-tracking');
+
+    if (codigo === "123ABC") {
+      resultado.innerHTML = "<p>Estado: En camino. Entrega estimada: hoy 6:00 PM.</p>";
+    } else {
+      resultado.innerHTML = "<p>Pedido no encontrado. Verifique el número ingresado.</p>";
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    document.querySelector("body").scrollIntoView({ behavior: "smooth" });
+  }
+  </script>
+  <a href="#" class="btn-flotante" title="Volver arriba" onclick="scrollToTop(event)">↑</a>
+
+</body>
+</html>
