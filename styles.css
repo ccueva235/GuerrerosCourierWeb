@@ -2,9 +2,9 @@
 :root {
     --primary-color: #e60000; /* Rojo principal de Guerreros */
     --secondary-color: #ff3333; /* Rojo más claro para hover/acentos */
-    --dark-bg: #0b0b0b;         /* Fondo principal oscuro */
-    --card-bg: #1a1a1a;         /* Fondo para tarjetas/secciones internas */
-    --text-light: #f0f0f0;      /* Texto claro principal */
+    --dark-bg: #0b0b0b;          /* Fondo principal oscuro */
+    --card-bg: #1a1a1a;          /* Fondo para tarjetas/secciones internas */
+    --text-light: #f0f0f0;         /* Texto claro principal */
     --text-dark: #333;
     --text-muted: #ccc;
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Considera cambiarla */
@@ -334,14 +334,14 @@ section:nth-of-type(even) { /* Para alternar fondos si se desea */
 }
 
 .tracking-result {
-  margin-top: 25px;
-  padding: 20px;
-  background-color: #222;
-  border-radius: var(--border-radius);
-  text-align: center;
-  border: 1px solid #333;
-  min-height: 50px; /* Para que no colapse cuando está vacío */
-  white-space: normal; /* Añade esta línea */
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid #333;
+    min-height: 50px; /* Para que no colapse cuando está vacío */
+    white-space: normal; /* Añade esta línea */
 }
 
 .tracking-section .container {
@@ -554,4 +554,149 @@ footer .container {
 /* Estilo especial para la tarjeta de Tarifa Plana */
 .benefits-grid .benefit-card:last-child { /* Apuntamos a la última tarjeta */
     background-color: #1c1c1c;
-    border: 2px solid var(--primary-color); /* Borde rojo
+    border: 2px solid var(--primary-color); /* Borde rojo */
+}
+
+.tarifa-plana-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    /* background-color: #111;  Lo quité porque ya el .benefit-card:last-child tiene un background */
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.tarifa-plana-text {
+    margin-bottom: 20px;
+}
+
+.tarifa-plana-text h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.tarifa-plana-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.tarifa-plana-precio {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.btn-tarifa-plana {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-tarifa-plana:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(230, 0, 0, 0.3);
+}
+
+
+/* Brochure Section Styles (Carrusel Continuo) */
+.brochure-section {
+    background-color: var(--card-bg);
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden; /* Oculta las partes del carrusel fuera del contenedor */
+}
+
+.brochure-container {
+    max-width: 1000px; /* Puedes ajustar el ancho m\u00E1ximo si quieres */
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    /* background-color: #2a2a2a; */
+}
+
+.brochure-carousel {
+    width: 100%;
+    overflow: hidden; /* Asegura que solo se vea la parte animada */
+    position: relative; /* Para posicionar el inner */
+    padding: 20px 0; /* Espacio vertical alrededor del carrusel */
+}
+
+.carousel-inner {
+    display: flex;
+    width: max-content; /* Permite que los elementos internos se alineen horizontalmente */
+    animation: scroll-left 30s linear infinite; /* Aplica la animaci\u00F3n */
+}
+
+.brochure-page {
+    /* Asegura que cada p\u00E1gina tenga un ancho definido */
+    /* Puedes ajustar este valor seg\u00FAn el tama\u00F1o deseado de cada imagen en el carrusel */
+    flex-shrink: 0; /* Evita que las p\u00E1ginas se encojan */
+    margin-right: 20px; /* Espacio entre las im\u00E1genes */
+    width: 250px; /* Ancho fijo para cada imagen (ajusta seg\u00FAn necesidad) */
+    height: auto; /* Permite que la altura se ajuste proporcionalmente */
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Importante para que el borde redondeado funcione con la imagen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.brochure-page img {
+    display: block;
+    width: 100%;
+    height: auto; /* Mantiene la proporci\u00F3n */
+    object-fit: cover; /* Asegura que la imagen cubra el \u00E1rea */
+}
+
+/* Keyframes para la animaci\u00F3n de desplazamiento */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0); /* Empieza sin desplazamiento */
+    }
+    100% {
+        /* Desplaza a la izquierda la mitad del ancho total (el ancho de las im\u00E1genes originales) */
+        /* Esto crea el efecto de bucle infinito */
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausar animaci\u00F3n al pasar el rat\u00F3n */
+.brochure-carousel:hover .carousel-inner {
+    animation-play-state: paused;
+}
+
+/* Media Query para ajustar el ancho de las im\u00E1genes en m\u00F3viles si es necesario */
+@media (max-width: 768px) {
+    .brochure-page {
+        width: 180px; /* Reduce el ancho en pantallas m\u00E1s peque\u00F1as */
+        margin-right: 15px;
+    }
+
+    /* Asegura que la animaci\u00F3n siga funcionando correctamente con el nuevo ancho */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+             /* El 50% debe seguir funcionando si la duplicaci\u00F3n es correcta */
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+.brochure-download {
+    margin-top: 30px; /* Aumenta el espacio arriba del bot\u00F3n */
+}
