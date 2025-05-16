@@ -1,5 +1,3 @@
-index.html:
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,10 +11,12 @@ index.html:
 <body>
     <header class="animate__animated animate__fadeInDown">
         <div class="container">
-            <div class="logo">
-                <img src="img/guerreros_courier_logo.png" alt="Logo Guerreros Courier">
-                <h1>Guerreros Courier</h1>
-            </div>
+            <a href="./" class="logo-link">
+                <div class="logo">
+                    <img src="img/guerreros_courier_logo.png" alt="Logo Guerreros Courier">
+                    <h1>Guerreros Courier</h1>
+                </div>
+            </a>
             <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
@@ -187,6 +187,47 @@ index.html:
         </div>
     </section>
 
+    <section id="videos" class="videos-section animate__animated animate__fadeInUp">
+        <div class="container videos-container">
+            <h2>Nuestros Videos</h2>
+            <div class="videos-carousel">
+                <div class="carousel-inner-videos">
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0003.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0004.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0005.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0006.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0007.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0003.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0004.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0005.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0006.mp4" controls loop></video>
+                    </div>
+                    <div class="video-item">
+                        <video src="videos/VID-20250515-WA0007.mp4" controls loop></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <footer class="animate__animated animate__fadeIn">
         <div class="container">
             <p>© <span id="currentYear"></span> Guerreros Courier. Todos los derechos reservados.</p>
@@ -197,6 +238,10 @@ index.html:
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/51999999999" target="_blank" class="btn-flotante btn-whatsapp" title="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    </a>
 
     <a href="#" class="btn-flotante" title="Volver arriba" onclick="scrollToTop(event)">
         <i class="fas fa-arrow-up"></i>

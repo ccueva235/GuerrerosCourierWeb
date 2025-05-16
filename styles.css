@@ -700,3 +700,100 @@ footer .container {
 .brochure-download {
     margin-top: 30px; /* Aumenta el espacio arriba del bot\u00F3n */
 }
+
+/* Videos Section Styles (Carrusel Continuo) */
+.videos-section {
+    background-color: var(--dark-bg); /* Puedes usar otro color si prefieres */
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.videos-container {
+    max-width: 1000px; /* Ajusta el ancho máximo según necesites */
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    /* background-color: #2a2a2a; */ /* Opcional: un fondo para el contenedor */
+}
+
+.videos-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.carousel-inner-videos {
+    display: flex;
+    width: max-content;
+    animation: scroll-left-videos 40s linear infinite; /* Ajusta la duración de la animación */
+}
+
+.video-item {
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 300px; /* Ancho de cada video */
+    height: auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.video-item video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Keyframes para la animación de desplazamiento de videos */
+@keyframes scroll-left-videos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Desplaza la mitad del ancho total */
+    }
+}
+
+/* Pausar animación al pasar el ratón sobre los videos */
+.videos-carousel:hover .carousel-inner-videos {
+    animation-play-state: paused;
+}
+
+/* Media Query para ajustar el ancho de los videos en móviles si es necesario */
+@media (max-width: 768px) {
+    .video-item {
+        width: 200px;
+        margin-right: 15px;
+    }
+
+    @keyframes scroll-left-videos {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/* Estilo para el enlace del logo */
+.logo-link {
+    text-decoration: none; /* Opcional: quitar el subrayado si aparece */
+    color: inherit; /* Hereda el color del texto si es necesario */
+}
+
+/* Estilo específico para el botón de WhatsApp flotante */
+.btn-flotante.btn-whatsapp {
+    bottom: 90px; /* Lo coloca arriba del botón de subir (50px de altura + 15px de espacio) */
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+    z-index: 1001; /* Asegura que esté por encima del botón de subir */
+}
+
+.btn-flotante.btn-whatsapp:hover {
+    background-color: #128C7E; /* Un verde más oscuro al pasar el ratón */
+}
