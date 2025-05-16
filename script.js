@@ -78,3 +78,29 @@ function scrollToTop(event) {
 // ** SECCIÓN: Lógica para el Año Actual del Footer                      **
 // ************************************************************************
 document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+
+
+// ************************************************************************
+// ** SECCIÓN: BOTON WHATSAPP                               **
+// ************************************************************************
+
+document.addEventListener('DOMContentLoaded', function() {
+    const whatsappButtonCombined = document.querySelector('.btn-flotante.btn-whatsapp-combined');
+
+    if (whatsappButtonCombined) {
+        whatsappButtonCombined.addEventListener('click', function(event) {
+            event.stopPropagation();
+            this.classList.toggle('active');
+        });
+    }
+
+    document.addEventListener('click', function() {
+        const whatsappButtonCombined = document.querySelector('.btn-flotante.btn-whatsapp-combined');
+        if (whatsappButtonCombined && whatsappButtonCombined.classList.contains('active')) {
+            whatsappButtonCombined.classList.remove('active');
+        }
+    });
+
+    // ... (rest of your script.js remains the same)
+});
